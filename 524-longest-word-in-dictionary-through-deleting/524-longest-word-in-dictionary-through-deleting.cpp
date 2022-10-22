@@ -3,8 +3,8 @@ public:
     string findLongestWord(string s, vector<string>& dictionary) {
        
         int j;
-        vector<string> v;
-        int maxlength = 0;
+        string maxstring = "";
+        // int maxlength = 0;
         for(int i = 0; i < dictionary.size(); i++)
         {
             int x = 0;
@@ -19,21 +19,17 @@ public:
                 else 
                     x++;
             }
-            if(j == dictionary[i].length() && j >= maxlength)
+            if(j == dictionary[i].length() && j >= maxstring.length())
             {
-                v.push_back(dictionary[i]);
-                maxlength = j;   
+                // v.push_back(dictionary[i]);
+                // maxlength = j;   
+                if(j == maxstring.length())
+                    maxstring = dictionary[i] < maxstring ? dictionary[i] : maxstring;
+                else 
+                    maxstring = dictionary[i];
             }
             
         }
-         sort(v.begin(), v.end(), [](string s1, string s2){
-            if(s1.length() == s2.length())
-                return s1 < s2;
-            return s1.length() > s2.length(); 
-        });
-        if(v.size() == 0)
-        return "";
-        else 
-            return v[0];
+        return maxstring;
     }
 };
