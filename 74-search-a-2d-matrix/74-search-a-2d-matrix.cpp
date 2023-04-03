@@ -55,7 +55,7 @@ public:
             }
         }
         midr = l + (c-l)/2;
-        if(target == matrix[mid][l])
+        if(target == matrix[mid][midr])
         {
             return true;
         }
