@@ -9,7 +9,6 @@ public:
         vector<map<char,int>> vmp;
         for(int i = 0; i < strs.size(); i++)
         {
-            
             map<char,int> mp;
             for(int j = 0; j < strs[i].size(); j++)
             {
@@ -35,11 +34,9 @@ public:
                 {
                     vmp.push_back(mp);
                     ans.push_back({strs[i]});
-                    
                 }
             }
         }
-        
         return ans;
     }
 };
