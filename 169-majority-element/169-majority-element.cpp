@@ -1,17 +1,22 @@
 class Solution {
 public:
+    //Use Majority Vote Algorithm
     int majorityElement(vector<int>& nums) {
-        map<int, int> mp;
-        for(auto i : nums)
-            mp[i]++;
-        int mx = 0, mxe;
-        for(auto it: mp)
+        int majorElement = nums[0], count = 1;
+        for(int i = 1; i < nums.size(); i++)
         {
-            if(it.second > mx)
+            if(count == 0)
             {
-                mx = it.second, mxe = it.first;
+                majorElement = nums[i];
+                count++;
             }
+            else if(majorElement == nums[i])
+            {
+                count++;
+            }
+            else
+                count--;
         }
-        return mxe;
+    return majorElement;
     }
 };
