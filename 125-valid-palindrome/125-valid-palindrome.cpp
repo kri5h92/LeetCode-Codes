@@ -12,14 +12,12 @@ public:
                    ns+=i;
            }
         }
-        string temp;
-        temp.assign(ns);
-        // cout<<ns<<" "<<temp;
-        reverse(ns.begin(), ns.end());
-        // cout<<ns<<" "<<temp;
-        if(temp == ns)
-            return true;
-        else 
-            return false;
+        int i = 0, j = ns.size() - 1;
+        while(i < j)
+        {
+            if(ns[i++] != ns[j--])
+                return false;
+        }
+        return true;
     }
 };
