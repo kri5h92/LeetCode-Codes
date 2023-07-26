@@ -7,8 +7,8 @@ public:
             t = t*10 + x%10;
             x/=10;
         }
-        bool ans = (t==c) ? true : false;
-        return ans;
+        // bool ans = (t==c) ? true : false;
+        return (t==c);
         
         
     }
