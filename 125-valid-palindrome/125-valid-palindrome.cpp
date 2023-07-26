@@ -2,18 +2,15 @@ class Solution {
 public:
     bool isPalindrome(string s) {
         // string ns = "";
+        transform(s.begin(), s.end(), s.begin(), ::tolower);
         int x = 0;
         for(char i : s)
         {
-           if(iswalnum(i))
-           {
-               if(i >= 65 && i <= 90)
-                   s[x++]=(i+32);
-               else 
-                   s[x++]=i;
-           }
+            if(iswalnum(i))
+                s[x++]=i;
+           
         }
-        cout<<s << " "<<x;
+        // cout<<s << " "<<x;
         int i = 0, j = x-1;
         while(i < j)
         {
