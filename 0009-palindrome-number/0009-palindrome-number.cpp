@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool isPalindrome(int x) {
-        long long t = 0, c = x;
+        // long long t = 0, c = x;
         string num = to_string(x);
         int n = num.length();
         for(int i = 0; i < n/2; i++)
